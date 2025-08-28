@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MEDSPORTS</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+ 
+  <!-- Banner -->
+  <header class="banner">
+    <img src="imagenes/logo.jpg" alt="Logo de la tienda" class="logo">
+    <h1>¡LLEGA MÁS LEJOS CON EL MEJOR EQUIPO DEPORTIVO!</h1>
+  </header>
+ 
+  <!-- Menú -->
+  <nav class="menu">
+    <ul>
+      <li><a href="#tienda">Nuestra Tienda</a></li>
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#contacto">Contáctenos</a></li>
+      <li><a href="#cotizacion">Cotización</a></li>
+      <li><a href="#disena-cuento">Diseña tu Cuento</a></li>
+    </ul>
+  </nav>
+ 
+  <!-- Nuestra Tienda -->
+  <section id="tienda">
+    <h2>Nuestra Tienda</h2>
+    <p>Bienvenidos a MED SPORTS, tu tienda online especializada en ropa deportiva de alta calidad. Aquí encontrarás una amplia selección de prendas cómodas, funcionales y con estilo, diseñadas para acompañarte en cada entrenamiento, carrera o rutina diaria.</p>
+
+    <h3>Integrantes del grupo:</h3>
+    <ul>
+      <li>CRISTIAN ALEXANDER GONZÁLEZ BOTERO</li>
+      <li>ELKIN FERNANDO PARRA RENDÓN</li>
+      <li>DIANA PATRICIA YEPES ARCILA</li>
+    </ul>
+  </section>
+ 
+  <!-- Servicios -->
+  <section id="servicios">
+    <h2>Servicios</h2>
+    <ul>
+      <li><strong>Asesoría Deportiva Personalizada:</strong> Te ayudamos a elegir el equipo o indumentaria ideal según tu disciplina y objetivos.</li>
+      <li><strong>Alquiler de equipamiento deportivo:</strong> Bicicletas, equipo de camping, paddle boards, raquetas y más.</li>
+    </ul>
+  </section>
+ 
+  <!-- Contáctenos -->
+  <section id="contacto">
+    <h2>Contáctenos</h2>
+    <p>WhatsApp: 1234567890</p>
+    <p>Teléfono: 0987654321</p>
+    <p>Dirección: Calle falsa 123</p>
+    <iframe src="https://www.google.com/maps/embed?...aquí-va-tu-link..." width="400" height="300"></iframe>
+  </section>
+ 
+  <!-- Cotización -->
+  <section id="cotizacion">
+    <h2>Solicita tu Cotización</h2>
+    <form action="guardar.php" method="POST">
+      <label>Nombres y Apellidos:</label>
+      <input type="text" name="nombres" required> <!-- 🔹 corregido -->
+
+      <label>Ciudad:</label>
+      <select name="ciudad" required>
+        <option value="Medellín">Medellín</option>
+        <option value="Bogotá">Bogotá</option>
+        <option value="Cali">Cali</option>
+        <option value="Barranquilla">Barranquilla</option>
+      </select>
+
+      <label>Dirección:</label>
+      <input type="text" name="direccion" required>
+
+      <label>Celular:</label>
+      <input type="text" name="celular" required>
+
+      <h3>Productos</h3>
+      <label><input type="checkbox" name="productos[Balón]" value="1"> Balón</label>
+      <input type="number" name="cantidades[Balón]" min="0" placeholder="Cantidad">
+
+      <label><input type="checkbox" name="productos[Guantes]" value="1"> Guantes</label>
+      <input type="number" name="cantidades[Guantes]" min="0" placeholder="Cantidad">
+
+      <label><input type="checkbox" name="productos[Zapatillas]" value="1"> Zapatillas</label>
+      <input type="number" name="cantidades[Zapatillas]" min="0" placeholder="Cantidad">
+
+      <label><input type="checkbox" name="productos[Camiseta]" value="1"> Camiseta</label>
+      <input type="number" name="cantidades[Camiseta]" min="0" placeholder="Cantidad">
+
+      <div class="botones">
+        <button type="submit">Enviar datos</button>
+        <button type="reset" onclick="window.location.href='index.html'">Cancelar</button>
+      </div>
+    </form>
+  </section>
+
+  <!-- Diseña tu Cuento -->
+  <section id="disena-cuento">
+    <h2>Diseña tu cuento</h2>
+    <form id="form-cuento">
+      <div class="form-group">
+        <label for="nombres">Nombres y apellidos:</label>
+        <input type="text" id="nombres" name="nombres" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="apodo">Apodo:</label>
+        <input type="text" id="apodo" name="apodo" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="color-cabello">Color de cabello:</label>
+        <select id="color-cabello" name="color-cabello" required>
+          <option value="negro">Negro</option>
+          <option value="castaño">Castaño</option>
+          <option value="rubio">Rubio</option>
+          <option value="otros">Otro</option>
+        </select>
+      </div>
+      
+      <div class="form-group">
+        <label for="color-ojos">Color de ojos:</label>
+        <select id="color-ojos" name="color-ojos" required>
+          <option value="cafés">Cafés</option>
+          <option value="azules">Azules</option>
+          <option value="verdes">Verdes</option>
+          <option value="negros">Negros</option>
+          <option value="otros">Otro</option>
+        </select>
+      </div>
+      
+      <div class="form-group">
+        <label for="edad">Edad:</label>
+        <input type="number" id="edad" name="edad" min="1" max="120" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="hobby">Hobby:</label>
+        <input type="text" id="hobby" name="hobby" required>
+      </div>
+      
+      <button type="button" onclick="generarCuento()">Continuar</button>
+    </form>
+    
+    <div id="cuento-generado" class="cuento-resultado"></div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
